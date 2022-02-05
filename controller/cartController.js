@@ -11,6 +11,19 @@ class cartController {
             })
     }
 
+    static async fetchCartItems (req, res, next) {
+        const items = await CartProduct.findAll({where: {cartId: 1}, attributes: {
+            exclude: ['createdAt', 'updatedAt']
+        }, include: {
+            model: Product,
+            key: 'id',
+            attributes: {
+                exclude: ['createdAt', 'updatedAt']
+            }
+        }})
+        res.status(200).json(items)
+    }
+
     static async addItem (req, res, next) {
         try {
             const {productId} = req.params
