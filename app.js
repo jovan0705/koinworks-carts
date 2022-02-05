@@ -11,6 +11,8 @@ app.use(express.json())
 
 app.use(router)
 
-app.listen(PORT, () => {
-    console.log(`app listening to http://localhost:${PORT}`)
-})
+// app.listen(PORT, () => {
+//     console.log(`app listening to http://localhost:${PORT}`)
+// })
+
+module.exports = app

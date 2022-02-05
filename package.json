@@ -4,7 +4,8 @@
   "description": "Koinworks Case Study",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "SET NODE_ENV=development&&npx nodemon ./bin/www.js",
+    "test": "SET NODE_ENV=test&&jest --watchAll --detectOpenHandles --forceExit --detectOpenHandles --runInBand"
   },
   "repository": {
     "type": "git",
