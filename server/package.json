@@ -1,0 +1,35 @@
+{
+  "name": "koinworks-carts",
+  "version": "1.0.0",
+  "description": "Koinworks Case Study",
+  "main": "index.js",
+  "scripts": {
+    "start": "SET NODE_ENV=development&&npx nodemon ./bin/www.js",
+    "test": "SET NODE_ENV=test&&jest --watchAll --detectOpenHandles --forceExit --detectOpenHandles --runInBand"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jovan0705/koinworks-carts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jovan0705/koinworks-carts/issues"
+  },
+  "homepage": "https://github.com/jovan0705/koinworks-carts#readme",
+  "dependencies": {
+    "axios": "^0.25.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.2",
+    "jest": "^27.5.0",
+    "pg": "^8.7.1",
+    "sequelize": "^6.15.0",
+    "supertest": "^6.2.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "sequelize-cli": "^6.4.1"
+  }
+}
