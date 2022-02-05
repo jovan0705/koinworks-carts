@@ -20,7 +20,7 @@ class cartController {
             attributes: {
                 exclude: ['createdAt', 'updatedAt']
             }
-        }})
+        , order: ['id']}})
         res.status(200).json(items)
     }
 
