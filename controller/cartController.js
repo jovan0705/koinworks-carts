@@ -19,7 +19,7 @@ class cartController {
             const productAlreadyExist = await CartProduct.findOne({where: {cartId: 1, productId}})
             if (productAlreadyExist) throw {name: 'PRODUCT_ALREADY_ADDED'}
             if (addedProduct.stock === 0) throw {name: 'NO_STOCK'}
-            const productInCart = await CartProduct.create({cartId: 1, productId, count: 1})
+            await CartProduct.create({cartId: 1, productId, count: 1})
             await Product.update({stock: addedProduct.stock-1}, {where: {id: productId}})
             await res.status(201).json({message: `Success add ${addedProduct.name} to cart`})
         } catch (err) {

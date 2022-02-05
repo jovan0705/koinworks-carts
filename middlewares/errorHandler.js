@@ -1,7 +1,7 @@
 const errorHandler = (err, req, res, next) => {
     switch (err.name) {
         case "PRODUCT_NOT_FOUND":
-            res.status(404).json({message: 'Product not Found'})
+            res.status(400).json({message: 'Product not Found'})
             break;
         
         case "NO_STOCK": 
