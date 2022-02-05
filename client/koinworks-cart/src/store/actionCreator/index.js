@@ -54,3 +54,69 @@ export const fetchMyItems = () => {
         }
     }
 }
+
+export const addItem = (id) => {
+    return async (dispatch) => {
+        dispatch(setItemsLoading(true))
+        dispatch(setItemsError(null))
+        try {
+            const data = await axios.post(`http://localhost:3000/carts/product/${id}`)
+            return data.data
+        } catch (err) {
+            // dispatch(setItemsError(err))
+            return err
+        } finally {
+            dispatch(setItemsLoading(false))
+        }
+    }
+}
+
+export const removeItem = (id) => {
+    return async (dispatch) => {
+        dispatch(setItemsLoading(true))
+        dispatch(setItemsError(null))
+        try {
+            const data = await axios.delete(`http://localhost:3000/carts/product/${id}`)
+            return data.data
+        } catch (err) {
+            // dispatch(setItemsError(err))
+            return err
+        } finally {
+            dispatch(setItemsLoading(false))
+        }
+    }
+}
+
+export const increaseItem = (id) => {
+    return async (dispatch) => {
+        dispatch(setItemsLoading(true))
+        dispatch(setItemsError(null))
+        try {
+            const data = await axios.patch(`http://localhost:3000/carts/product/${id}/increase`)
+            console.log(data)
+            return data.data
+        } catch (err) {
+            // console.log(err.response.data.message)
+            // dispatch(setItemsError(err))
+            return err
+        } finally {
+            dispatch(setItemsLoading(false))
+        }
+    }
+}
+
+export const decreaseItem = (id) => {
+    return async (dispatch) => {
+        dispatch(setItemsLoading(true))
+        dispatch(setItemsError(null))
+        try {
+            const data = await axios.patch(`http://localhost:3000/carts/product/${id}/decrease`)
+            return data.data
+        } catch (err) {
+            // dispatch(setItemsError(err))
+            return err
+        } finally {
+            dispatch(setItemsLoading(false))
+        }
+    }
+}
