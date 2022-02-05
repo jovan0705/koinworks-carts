@@ -15,17 +15,23 @@ module.exports = {
      {
        name: 'Tamiya',
        price: 100000,
-       count: 5,
+       stock: 5,
+       createdAt: new Date(),
+       updatedAt: new Date()
      },
      {
       name: 'Jeans Polo',
       price: 250000,
-      count: 2,
+      stock: 2,
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
       name: 'LV Wallet',
       price: 500000,
-      count: 1,
+      stock: 1,
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
    ])
   },
